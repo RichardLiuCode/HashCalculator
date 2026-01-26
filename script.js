@@ -10,7 +10,7 @@ async function HASH(input, type) {
     return outputString
 }
 
-HASH("COOLER", "SHA-256")
+HASH("COOLER", "SHA-512")
     .then(function (data) {
         console.log(data)
     })
