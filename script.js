@@ -1,16 +1,10 @@
-async function HASH(input, type) {
-    const encoder = new TextEncoder();
-    const encodedText = encoder.encode(input);
-    const hash = await window.crypto.subtle.digest(type, encodedText);
-    const hashArray = Array.from(new Uint8Array(hash))
-    const hashHex = hashArray.map((b) =>
-        b.toString(16).padStart(2, "0")
-    );
-    const outputString = hashHex.join("")
-    return outputString
-}
-
-HASH("COOLER", "SHA-512")
-    .then(function (data) {
-        console.log(data)
-    })
+import { HASH } from "./hash.js"
+document.getElementById("InputForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const inputs = new FormData(this);
+    console.log(inputs.get("type"))
+    HASH(inputs.get("Input"), inputs.get("type"))
+        .then(function (output) {
+            document.getElementById("display").innerText = output;
+        })
+})

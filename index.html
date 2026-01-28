@@ -3,24 +3,25 @@
 
 <head>
     <title>Hash Calculator</title>
-    <script defer src="script.js"></script>
+    <script defer type="module" src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1 class="title">Hash Calculator</h1>
-    <p class="subtitle">Hash is a calculation which cannot be calculate back from the result to the original input.
-        Especially for
+    <p class="subtitle">Hash is a calculation which cannot be calculate back from the result to the original input. It
+        is secure especially use for
         storing
         password.</p>
+    <br>
     <div class="appWrapper">
         <form id="InputForm">
             <input name="Input">
             <select name="type">
-                <option>&nbsp;SHA-1</option>
-                <option>&nbsp;SHA-256</option>
-                <option>&nbsp;SHA-384</option>
-                <option>&nbsp;SHA-512</option>
+                <option value="SHA-1">&nbsp;SHA-1</option>
+                <option value="SHA-256">&nbsp;SHA-256</option>
+                <option value="SHA-384">&nbsp;SHA-384</option>
+                <option value="SHA-512">&nbsp;SHA-512</option>
             </select>
             <input type="submit" value="Get Hash Value">
         </form>
